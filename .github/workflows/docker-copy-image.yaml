@@ -7,7 +7,7 @@ jobs:
   copy_image:
     name: "Generate Docker image tag"
     runs-on: ubuntu-latest
-    environment:
+    env:
       IMAGE_SRC: "nextcloud:32.0.6"
       IMAGE_DST: "ghcr.io/David-Lor/nextcloud:32.0.6"
     steps:
@@ -18,6 +18,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: "Pull image"
-        run: docker pull ${{ env.IMAGE_SRC }}
+        run: "docker pull ${{ env.IMAGE_SRC }}"
       - name: "Push Image"
         run: "docker push ${{ env.IMAGE_DST }}"
