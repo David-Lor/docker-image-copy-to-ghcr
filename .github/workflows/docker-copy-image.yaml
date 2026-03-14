@@ -7,6 +7,9 @@ jobs:
   copy_image:
     name: "Generate Docker image tag"
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     env:
       IMAGE_SRC: "nextcloud:32.0.6"
       IMAGE_DST: "ghcr.io/david-lor/nextcloud:32.0.6"
