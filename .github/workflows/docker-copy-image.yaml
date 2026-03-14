@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       IMAGE_SRC: "nextcloud:32.0.6"
-      IMAGE_DST: "ghcr.io/${{ env.GH_USER }}/${{ env.IMAGE_SRC }}"
+      IMAGE_DST: "ghcr.io/David-Lor/nextcloud:32.0.6"
     steps:
       - name: "Login to GitHub Container Registry"
         uses: docker/login-action@v1
