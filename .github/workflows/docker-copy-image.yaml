@@ -1,4 +1,4 @@
-name: "Docker Build & Push"
+name: "Docker Copy Image"
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ jobs:
   copy_image:
     name: "Generate Docker image tag"
     runs-on: ubuntu-latest
-    env:
+    environment:
       IMAGE_SRC: "nextcloud:32.0.6"
       IMAGE_DST: "ghcr.io/${{ env.GH_USER }}/${{ env.IMAGE_SRC }}"
     steps:
